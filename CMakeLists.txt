@@ -1,7 +1,10 @@
+cmake_minimum_required(VERSION 3.28.0 FATAL_ERROR)
 
 set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_SYSTEM_PROCESSOR x86_64)
+
+project(HelloWorld VERSION 0.1.0 LANGUAGES C CXX)
 
 # SDKROOT is set by environment-setup-core2-64-nilrt-linux.bat
 # and is a path of Windows-format (using "\" as directory separator)
@@ -25,12 +28,7 @@ set(CMAKE_FIND_ROOT_PATH_MODE_INCLUDE ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 
-cmake_minimum_required(VERSION 3.28.0)
-project(HelloWorld VERSION 0.1.0 LANGUAGES C CXX)
-
 set(EXECUTABLE_OUTPUT_PATH bin)
-set(CMAKE_BUILD_TYPE Debug)
-
 add_executable(HelloWorld ./src/helloworld.c)
 
 # include(CTest)
