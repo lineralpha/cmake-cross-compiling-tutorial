@@ -14,6 +14,9 @@ string(REPLACE "\\"  "/" toolchainpath ${toolchainpath})
 set(CMAKE_C_COMPILER ${toolchainpath}/x86_64-w64-mingw32/usr/bin/x86_64-nilrt-linux/x86_64-nilrt-linux-gcc.exe)
 set(CMAKE_CXX_COMPILER ${toolchainpath}/x86_64-w64-mingw32/usr/bin/x86_64-nilrt-linux/x86_64-nilrt-linux-g++.exe)
 
+set(CMAKE_<LANG>_STANDARD 17)
+set(CMAKE_<LANG>_STANDARD_REQUIRED ON)
+
 set(CMAKE_SYSROOT ${toolchainpath}/core2-64-nilrt-linux)
 set(CMAKE_<LANG>_STANDARD_INCLUDE_DIRECTORIES 
         ${toolchainpath}/core2-64-nilrt-linux/usr/include/c++/11.3.0 
