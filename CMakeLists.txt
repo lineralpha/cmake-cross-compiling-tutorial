@@ -34,6 +34,14 @@ set(CMAKE_FIND_ROOT_PATH_MODE_PACKAGE ONLY)
 set(EXECUTABLE_OUTPUT_PATH bin)
 add_executable(HelloWorld ./src/helloworld.c)
 
+add_subdirectory(src/sharedlib)
+
+include_directories(
+        ${toolchainpath}/core2-64-nilrt-linux/usr/inlcude
+        ${toolchainpath}/core2-64-nilrt-linux/usr/local/inlcude)
+        
+target_link_libraries(HelloWorld PUBLIC MyLib)
+
 # include(CTest)
 # enable_testing()
 
