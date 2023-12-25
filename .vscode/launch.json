@@ -5,6 +5,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
+            // resolved by CMake Tools
             "program": "${command:cmake.launchTargetPath}",
             "args": [],
             "stopAtEntry": false,
@@ -18,8 +19,9 @@
             "externalConsole": false,
             "MIMode": "gdb",
             "miDebuggerPath": "${env:SDKROOT}/sysroots/x86_64-w64-mingw32/usr/bin/x86_64-nilrt-linux/x86_64-nilrt-linux-gdb.exe",
+            // must be the remote gdbserver address:port 
             "miDebuggerServerAddress": "serveraddress:port",
-            "preLaunchTask": "CMake Generate Build Files"
+            "preLaunchTask": "CMake: build"
         }
     ]
 }
