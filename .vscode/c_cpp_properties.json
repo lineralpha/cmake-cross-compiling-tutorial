@@ -1,0 +1,28 @@
+{
+    "env": {
+        "compilerSysroots": "${env:SDKROOT}/sysroots"
+    },
+    "configurations": [
+        {
+            "name": "NI LinuxRT x64",
+            "compilerPath": "${compilerSysroots}/x86_64-w64-mingw32/usr/bin/x86_64-nilrt-linux/x86_64-nilrt-linux-gcc.exe",
+            "compilerArgs": [
+                "--sysroot=${compilerSysroots}/core2-64-nilrt-linux"
+            ],
+            "includePath": [
+                "${workspaceFolder}/**",
+                "${compilerSysroots}/core2-64-nilrt-linux/usr/include"
+            ],
+            // "defines": [
+            //     "_DEBUG",
+            //     "UNICODE",
+            //     "_UNICODE"
+            // ],
+            // "cStandard": "c17",
+            // "cppStandard": "c++17",
+            // "configurationProvider": "ms-vscode.cmake-tools",
+            "intelliSenseMode": "gcc-x64"
+        }
+    ],
+    "version": 4
+}
