@@ -11,6 +11,9 @@ set(CMAKE_<LANG>_FLAGS "-Wall -fmessage-length=0")
 set(CMAKE_<LANG>_FLAGS_DEBUG "-O0 -g3")
 set(CMAKE_<LANG>_FLAGS_RELEASE "-O3")
 
+set(CMAKE_STAGING_PREFIX ${CMAKE_SYSROOT}/usr/local)
+set(CMAKE_INSTALL_PREFIX /usr/local)
+
 include_directories(
         ${toolchainpath}/core2-64-nilrt-linux/usr/inlcude
         ${toolchainpath}/core2-64-nilrt-linux/usr/local/inlcude)

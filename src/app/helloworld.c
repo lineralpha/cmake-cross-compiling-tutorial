@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 
-#include "mylib.c"
+#include "mylib.h"
 
 int main(void) {
     int result = add(5, 3);

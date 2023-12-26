@@ -1,3 +1,4 @@
+# glob for all c source files in current directory
 file(GLOB SRC_FILES "*.c")
 message(STATUS "src files: ${SRC_FILES}")
 
@@ -6,7 +7,8 @@ set(LIBRARY_OUTPUT_PATH bin)
 
 target_include_directories(MyLib
     INTERFACE
-    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>)
+    $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
+    $<INSTALL_INTERFACE:include>)
 
 
 set_property(TARGET MyLib PROPERTY VERSION "1.0.0")
@@ -18,3 +20,8 @@ set_property(TARGET MyLib PROPERTY SOVERSION "1")
 #   - /usr/local/lib/       location for normal user mode libraries installed from source/manually
 #   - /usr/include          similar to /usr/lib but for includes
 #   - /usr/local/include    similar to /usr/local/lib but for includes
+
+install(TARGETS MyLib
+    EXPORT MyLibTargets
+    DESTINATION lib)
+install(FILES mylib.h DESTINATION include)    
