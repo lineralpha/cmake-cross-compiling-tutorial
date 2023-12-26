@@ -14,14 +14,13 @@ target_include_directories(MyLib
 set_property(TARGET MyLib PROPERTY VERSION "1.0.0")
 set_property(TARGET MyLib PROPERTY SOVERSION "1")
 
-# On Linux, the following are stadnard directories for shared libraries:
-#   - /lib/                 location for essential Linux OS libraries
-#   - /usr/lib/             location for normal user mode libraries installed by package manager
-#   - /usr/local/lib/       location for normal user mode libraries installed from source/manually
-#   - /usr/include          similar to /usr/lib but for includes
-#   - /usr/local/include    similar to /usr/local/lib but for includes
-
+# EXPORT generates a CMake file containing code to  import all targets
+# listed in the install command from the installation tree.
 install(TARGETS MyLib
     EXPORT MyLibTargets
     DESTINATION lib)
-install(FILES mylib.h DESTINATION include)    
+install(FILES mylib.h DESTINATION include)
+
+install(EXPORT MyLibTargets
+    FILE MyLibTargets.cmake
+    DESTINATION lib/cmake/mylib)
