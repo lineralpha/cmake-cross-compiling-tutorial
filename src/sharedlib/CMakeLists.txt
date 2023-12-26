@@ -1,4 +1,7 @@
-add_library(MyLib SHARED mylib.c)
+file(GLOB SRC_FILES "*.c")
+message(STATUS "src files: ${SRC_FILES}")
+
+add_library(MyLib SHARED ${SRC_FILES})
 set(LIBRARY_OUTPUT_PATH bin)
 
 target_include_directories(MyLib
