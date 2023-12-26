@@ -1,4 +1,5 @@
-
+# skip compiler check which will fail in cross-compiling scenario
+# (executable not able to run on host)
 set(CMAKE_TRY_COMPILE_TARGET_TYPE "STATIC_LIBRARY")
 set(CMAKE_SYSTEM_NAME Linux)
 set(CMAKE_SYSTEM_PROCESSOR x86_64)
