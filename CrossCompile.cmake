@@ -14,8 +14,8 @@ set(CMAKE_CXX_COMPILER ${toolchainpath}/x86_64-w64-mingw32/usr/bin/x86_64-nilrt-
 
 set(CMAKE_SYSROOT ${toolchainpath}/core2-64-nilrt-linux)
 set(CMAKE_<LANG>_STANDARD_INCLUDE_DIRECTORIES 
-        ${toolchainpath}/core2-64-nilrt-linux/usr/include/c++/11.3.0 
-        ${toolchainpath}/core2-64-nilrt-linux/usr/include/c++/11.3.0/x86_64-nilrt-linux)
+    ${toolchainpath}/core2-64-nilrt-linux/usr/include/c++/11.3.0 
+    ${toolchainpath}/core2-64-nilrt-linux/usr/include/c++/11.3.0/x86_64-nilrt-linux)
 
 # how CMAKE_FIND_ROOT_PATH is used for each type of search
 set(CMAKE_FIND_ROOT_PATH_MODE_PROGRAM NEVER)

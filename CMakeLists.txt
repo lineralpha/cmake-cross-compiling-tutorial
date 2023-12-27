@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.28.0 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.28.0)
 
 # cross-compiling toolchain
 # set(CMAKE_TOOLCHAIN_FILE CrossCompile.cmake)
@@ -24,8 +24,8 @@ set(CMAKE_INSTALL_PREFIX /usr/local)
 
 # move this to the toolchain file?
 include_directories(
-        ${toolchainpath}/core2-64-nilrt-linux/usr/inlcude
-        ${toolchainpath}/core2-64-nilrt-linux/usr/local/inlcude)
+    ${toolchainpath}/core2-64-nilrt-linux/usr/inlcude
+    ${toolchainpath}/core2-64-nilrt-linux/usr/local/inlcude)
         
 add_subdirectory(src/sharedlib)
 add_subdirectory(src/app)
@@ -40,5 +40,8 @@ add_subdirectory(src/app)
 set(CPACK_PROJECT_NAME "${PROJECT_NAME}")
 set(CPACK_PROJECT_VERSION "${PROJECT_VERSION}")
 set(CPACK_RESOURCE_FILE_LICENSE "${CMAKE_CURRENT_SOURCE_DIR}/LICENSE")
+set(CPACK_SOURCE_IGNORE_FILES
+    /.git
+    /build)
 SET(CPACK_SOURCE_GENERATOR "TGZ")
 include(CPack)
