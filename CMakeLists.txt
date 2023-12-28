@@ -1,5 +1,12 @@
 cmake_minimum_required(VERSION 3.28.0)
 
+if (NOT DEFINED ENV{SDKROOT})
+    message(FATAL_ERROR 
+    "ENV SDKROOT not defined. " 
+    "Run environment-setup-core2-64-nilrt-linux.bat "
+    "before launching CMake Configure.")
+endif()
+
 # cross-compiling toolchain
 # set(CMAKE_TOOLCHAIN_FILE CrossCompile.cmake)
 include(CrossCompile.cmake)
